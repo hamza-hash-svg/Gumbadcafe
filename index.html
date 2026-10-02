@@ -1,0 +1,2149 @@
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gumbad Cafe | Luxury Rooftop Dining Opposite Jama Masjid, Old Delhi</title>
+  <meta name="description" content="Experience royal rooftop dining under the dome at Gumbad Cafe, overlooking the iconic Jama Masjid in Daryaganj, Old Delhi. Authentic Indian, Tandoori, and Intercontinental cuisine in a romantic Mughal setting." />
+  <meta name="keywords" content="Gumbad Cafe, Rooftop Cafe Old Delhi, Jama Masjid view restaurant, Romantic dinner Delhi, Mughlai food, Daryaganj cafes" />
+
+  <!-- Open Graph / Meta -->
+  <meta property="og:type" content="restaurant" />
+  <meta property="og:title" content="Gumbad Cafe | Royal Rooftop Cafe & Dining" />
+  <meta property="og:description" content="Dine under the historic dome with panoramic moonlit views of Jama Masjid." />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1585938389612-a552a28d6914?auto=format&fit=crop&w=1200&q=80" />
+
+  <!-- Restaurant Schema JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Restaurant",
+    "name": "Gumbad Cafe",
+    "image": "https://images.unsplash.com/photo-1585938389612-a552a28d6914?auto=format&fit=crop&w=1200&q=80",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Rooftop, Opposite Gate 3, Jama Masjid, Daryaganj",
+      "addressLocality": "Old Delhi",
+      "addressRegion": "New Delhi",
+      "postalCode": "110006",
+      "addressCountry": "IN"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": "28.6507",
+      "longitude": "77.2334"
+    },
+    "servesCuisine": ["North Indian", "Mughlai", "Continental", "Tandoor", "Beverages"],
+    "priceRange": "₹₹ - ₹₹₹",
+    "openingHours": "Mo-Su 13:00-01:00",
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "3.6",
+      "reviewCount": "420"
+    }
+  }
+  </script>
+
+  <!-- Google Fonts: Cinzel, Cormorant Garamond, Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Inter:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <!-- React & ReactDOM -->
+  <script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
+  <!-- Babel for JSX -->
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+  <!-- GSAP for smooth animations -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            midnight: '#05060F',
+            deepNavy: '#0A1128',
+            indigoPalace: '#141B3A',
+            gold: {
+              DEFAULT: '#D4AF37',
+              light: '#F3E5AB',
+              dark: '#997F24',
+              shimmer: '#FFE494',
+            },
+            champagne: '#F3E5AB',
+            amberGlow: '#FFB347',
+            ivory: '#F5EFE0',
+          },
+          fontFamily: {
+            cinzel: ['Cinzel', 'serif'],
+            cormorant: ['Cormorant Garamond', 'serif'],
+            inter: ['Inter', 'sans-serif'],
+          },
+          letterSpacing: {
+            regal: '0.25em',
+            grand: '0.35em',
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #05060F; }
+    ::-webkit-scrollbar-thumb { background: #D4AF37; border-radius: 3px; }
+    ::-webkit-scrollbar-thumb:hover { background: #F3E5AB; }
+
+    /* Mughal Arch (Jharokha) Shape Generator */
+    .jharokha-arch {
+      clip-path: polygon(
+        0% 100%, 0% 28%,
+        6% 22%, 14% 17%, 25% 12%, 36% 7%, 45% 3%, 50% 0%,
+        55% 3%, 64% 7%, 75% 12%, 86% 17%, 94% 22%, 100% 28%,
+        100% 100%
+      );
+    }
+    .jharokha-arch-reverse {
+      clip-path: polygon(
+        0% 0%, 100% 0%,
+        100% 72%, 94% 78%, 86% 83%, 75% 88%, 64% 93%, 55% 97%, 50% 100%,
+        45% 97%, 36% 93%, 25% 88%, 14% 83%, 6% 78%, 0% 72%
+      );
+    }
+
+    /* Royal Gold Foil Text */
+    .text-gold-foil {
+      background: linear-gradient(135deg, #F3E5AB 0%, #D4AF37 40%, #FFE494 65%, #997F24 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .text-gold-shimmer {
+      background: linear-gradient(90deg, #D4AF37 0%, #FFF4CC 50%, #D4AF37 100%);
+      background-size: 200% auto;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: goldShimmer 4s linear infinite;
+    }
+
+    @keyframes goldShimmer {
+      0% { background-position: 0% 50%; }
+      100% { background-position: 200% 50%; }
+    }
+
+    /* Double line ornate border */
+    .royal-border {
+      position: relative;
+      border: 1px solid rgba(212, 175, 55, 0.4);
+    }
+    .royal-border::before {
+      content: '';
+      position: absolute;
+      inset: 4px;
+      border: 1px solid rgba(212, 175, 55, 0.2);
+      pointer-events: none;
+    }
+
+    /* Jali Lattice Background Pattern */
+    .jali-pattern {
+      background-image: radial-gradient(circle, rgba(212, 175, 55, 0.12) 1px, transparent 1px),
+                        radial-gradient(circle, rgba(212, 175, 55, 0.06) 1px, transparent 1px);
+      background-size: 32px 32px;
+      background-position: 0 0, 16px 16px;
+    }
+
+    .jali-screen {
+      background-image: 
+        repeating-linear-gradient(45deg, rgba(212,175,55,0.03) 0, rgba(212,175,55,0.03) 1px, transparent 0, transparent 18px),
+        repeating-linear-gradient(-45deg, rgba(212,175,55,0.03) 0, rgba(212,175,55,0.03) 1px, transparent 0, transparent 18px);
+    }
+
+    /* Glows */
+    .gold-glow-sm { box-shadow: 0 0 15px rgba(212, 175, 55, 0.2); }
+    .gold-glow-lg { box-shadow: 0 0 35px rgba(212, 175, 55, 0.35); }
+    .amber-ambient { box-shadow: inset 0 0 80px rgba(255, 179, 71, 0.12); }
+
+    /* Starry background twinkle */
+    @keyframes twinkle {
+      0%, 100% { opacity: 0.2; transform: scale(0.8); }
+      50% { opacity: 0.9; transform: scale(1.1); }
+    }
+    .twinkle-1 { animation: twinkle 3s ease-in-out infinite; }
+    .twinkle-2 { animation: twinkle 4.5s ease-in-out infinite 1s; }
+    .twinkle-3 { animation: twinkle 6s ease-in-out infinite 2s; }
+
+    /* Finial & Dome Silhouette Drawing */
+    .path-draw {
+      stroke-dasharray: 1000;
+      stroke-dashoffset: 1000;
+      animation: draw 2.5s ease forwards;
+    }
+    @keyframes draw {
+      to { stroke-dashoffset: 0; }
+    }
+
+    /* Smooth page fade transition */
+    .fade-in-up {
+      animation: fadeInUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+
+<body class="bg-midnight text-ivory font-inter selection:bg-gold selection:text-midnight overflow-x-hidden antialiased">
+  <div id="root"></div>
+
+  <!-- Gold Dust Canvas Animation & Main React Component Script -->
+  <script type="text/babel">
+    const { useState, useEffect, useRef, useMemo } = React;
+
+    // --- SOUND / AMBIENCE HELPER (Web Audio API) ---
+    // Minimal soft chime for luxurious interactions without external audio dependencies
+    const playSoftChime = () => {
+      try {
+        const ctx = new (window.AudioContext || window.webkitAudioContext)();
+        const osc = ctx.createOscillator();
+        const gain = ctx.createGain();
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(587.33, ctx.currentTime); // D5
+        osc.frequency.exponentialRampToValueAtTime(880, ctx.currentTime + 0.6); // A5
+        gain.gain.setValueAtTime(0.04, ctx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.0001, ctx.currentTime + 0.8);
+        osc.connect(gain);
+        gain.connect(ctx.destination);
+        osc.start();
+        osc.stop(ctx.currentTime + 0.8);
+      } catch (e) {
+        // AudioContext blocked or not allowed
+      }
+    };
+
+    // --- REUSABLE ORNAMENTAL COMPONENTS ---
+    const GoldDivider = ({ title, subtitle }) => (
+      <div className="flex flex-col items-center justify-center my-10 relative">
+        <div className="flex items-center gap-4 w-full max-w-lg px-4">
+          <div className="h-[1px] flex-1 bg-gradient-to-r from-transparent via-gold/50 to-gold"></div>
+          
+          {/* Mughal Dome Motif Centerpiece */}
+          <div className="text-gold flex items-center justify-center p-2 rounded-full border border-gold/40 bg-deepNavy/80 shadow-inner">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+              <path d="M12 2V5M12 5C8 5 4 8 4 13V20H20V13C20 8 16 5 12 5Z" />
+              <path d="M12 2L13 4H11L12 2Z" fill="#D4AF37" />
+              <circle cx="12" cy="12" r="2" fill="#D4AF37" />
+            </svg>
+          </div>
+          
+          <div className="h-[1px] flex-1 bg-gradient-to-l from-transparent via-gold/50 to-gold"></div>
+        </div>
+        {title && (
+          <span className="font-cinzel text-xs tracking-regal text-gold uppercase mt-2">{title}</span>
+        )}
+        {subtitle && (
+          <p className="font-cormorant italic text-sm text-champagne/70 mt-0.5">{subtitle}</p>
+        )}
+      </div>
+    );
+
+    const CornerFlourish = () => (
+      <>
+        <div className="absolute top-1 left-1 w-3 h-3 border-t-2 border-l-2 border-gold/60 pointer-events-none"></div>
+        <div className="absolute top-1 right-1 w-3 h-3 border-t-2 border-r-2 border-gold/60 pointer-events-none"></div>
+        <div className="absolute bottom-1 left-1 w-3 h-3 border-b-2 border-l-2 border-gold/60 pointer-events-none"></div>
+        <div className="absolute bottom-1 right-1 w-3 h-3 border-b-2 border-r-2 border-gold/60 pointer-events-none"></div>
+      </>
+    );
+
+    const SkylineSilhouette = ({ className = "text-gold/20" }) => (
+      <div className={`w-full overflow-hidden flex justify-center ${className}`}>
+        <svg viewBox="0 0 1200 180" className="w-full max-w-5xl h-auto" fill="currentColor">
+          {/* Jama Masjid & Mughal Old Delhi Skyline SVG */}
+          <path d="M0,180 L0,165 L40,165 L50,150 L60,165 L120,165 L130,120 L135,70 L140,60 L145,70 L150,120 L160,165 L240,165 L260,140 L280,140 L290,120 L300,90 L305,40 L310,30 L315,40 L320,90 L330,120 L340,140 L360,140 L380,165 L450,165 L460,130 L480,110 L490,90 C490,70 510,50 530,50 C550,50 570,70 570,90 L580,110 L600,130 L610,165 C610,165 620,165 630,165 L640,125 L650,95 C650,60 670,30 700,30 C730,30 750,60 750,95 L760,125 L770,165 L840,165 L850,135 L860,115 L880,95 C880,75 895,60 915,60 C935,60 950,75 950,95 L970,115 L980,135 L990,165 L1060,165 L1070,110 L1075,55 L1080,45 L1085,55 L1090,110 L1100,165 L1200,165 L1200,180 Z" />
+        </svg>
+      </div>
+    );
+
+    // --- GOLD PARTICLES CANVAS ---
+    const GoldDustCanvas = () => {
+      const canvasRef = useRef(null);
+
+      useEffect(() => {
+        const canvas = canvasRef.current;
+        if (!canvas) return;
+        const ctx = canvas.getContext('2d');
+        let animationFrameId;
+        let width = (canvas.width = window.innerWidth);
+        let height = (canvas.height = window.innerHeight);
+
+        const handleResize = () => {
+          width = canvas.width = window.innerWidth;
+          height = canvas.height = window.innerHeight;
+        };
+        window.addEventListener('resize', handleResize);
+
+        const particleCount = 45;
+        const particles = Array.from({ length: particleCount }, () => ({
+          x: Math.random() * width,
+          y: Math.random() * height,
+          size: Math.random() * 2 + 0.6,
+          speedY: -(Math.random() * 0.35 + 0.1),
+          speedX: (Math.random() - 0.5) * 0.25,
+          opacity: Math.random() * 0.7 + 0.2,
+          pulse: Math.random() * 0.02 + 0.005,
+        }));
+
+        const render = () => {
+          ctx.clearRect(0, 0, width, height);
+          particles.forEach((p) => {
+            p.y += p.speedY;
+            p.x += p.speedX;
+            p.opacity += Math.sin(Date.now() * p.pulse) * 0.008;
+            if (p.opacity < 0.1) p.opacity = 0.1;
+            if (p.opacity > 0.8) p.opacity = 0.8;
+
+            if (p.y < 0) {
+              p.y = height + 10;
+              p.x = Math.random() * width;
+            }
+            if (p.x < 0) p.x = width;
+            if (p.x > width) p.x = 0;
+
+            ctx.beginPath();
+            ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+            ctx.fillStyle = `rgba(212, 175, 55, ${p.opacity})`;
+            ctx.shadowBlur = 8;
+            ctx.shadowColor = '#D4AF37';
+            ctx.fill();
+          });
+          animationFrameId = requestAnimationFrame(render);
+        };
+
+        render();
+
+        return () => {
+          window.removeEventListener('resize', handleResize);
+          cancelAnimationFrame(animationFrameId);
+        };
+      }, []);
+
+      return (
+        <canvas
+          ref={canvasRef}
+          className="fixed inset-0 pointer-events-none z-10 opacity-70"
+        />
+      );
+    };
+
+    // --- DATA REPOSITORY ---
+    const MENU_ITEMS = {
+      starters: [
+        {
+          name: "Mughlai Malai Broccoli",
+          desc: "Tender florets charred in tandoor with cardamom cream, royal saffron glaze and crushed pistachios.",
+          price: "₹495",
+          veg: true,
+          badge: "Chef's Special",
+          image: "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=600&q=80"
+        },
+        {
+          name: "BBQ Smoked Chicken Wings",
+          desc: "Glazed in Old Delhi spiced jaggery-BBQ reduction, finished with toasted sesame and kashmiri chili.",
+          price: "₹545",
+          veg: false,
+          badge: "Popular",
+          image: "https://images.unsplash.com/photo-1527477378308-1e024f330052?auto=format&fit=crop&w=600&q=80"
+        },
+        {
+          name: "Zafrani Paneer Tikka",
+          desc: "Cottage cheese steeped in saffron, hung curd, yellow chili marinade, grilled over slow charcoal.",
+          price: "₹475",
+          veg: true,
+          image: "https://images.unsplash.com/photo-1567188040759-fb8a883dc6d8?auto=format&fit=crop&w=600&q=80"
+        },
+        {
+          name: "Daryaganj Crispy Corn Chaat",
+          desc: "Golden kernels tossed with raw mango, pomegranate pearls, mint emulsion and black rock salt.",
+          price: "₹395",
+          veg: true,
+          image: "https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=600&q=80"
+        }
+      ],
+      tandoor: [
+        {
+          name: "Royal Tandoori Jumbo Prawns",
+          desc: "Coastal tiger prawns marinated in mustard, ajwain and degi mirch, flamed over volcanic rock grill.",
+          price: "₹795",
+          veg: false,
+          badge: "Signature",
+          image: "https://images.unsplash.com/photo-1559742811-822873691df8?auto=format&fit=crop&w=600&q=80"
+        },
+        {
+          name: "Kakori Galawat Kebab",
+          desc: "Silken melt-in-mouth smoked lamb patties infused with rose petals and 24 potli spices.",
+          price: "₹625",
+          veg: false,
+          image: "https://images.unsplash.com/photo-1599488615731-7e5c2823ff28?auto=format&fit=crop&w=600&q=80"
+        },
+        {
+          name: "Murgh Afghani Tangdi",
+          desc: "Chicken drumsticks in a rich cashew-cheese marinade with white pepper and royal mace.",
+          price: "₹575",
+          veg: false,
+          image: "https://images.unsplash.com/photo-1626777552726-4a6b54c97e46?auto=format&fit=crop&w=600&q=80"
+        },
+        {
+          name: "Dahi Ke Kebab",
+          desc: "Spiced hung curd patties with a crunchy golden crust, served with spiced plum chutney.",
+          price: "₹445",
+          veg: true,
+          image: "https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=600&q=80"
+        }
+      ],
+      mains: [
+        {
+          name: "Heritage Old Delhi Butter Chicken",
+          desc: "Slow-cooked pulled tandoori chicken in a silky, sun-ripened tomato-butter gravy with kasuri methi.",
+          price: "₹645",
+          veg: false,
+          badge: "Legendary",
+          image: "https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?auto=format&fit=crop&w=600&q=80"
+        },
+        {
+          name: "Nawabi Dum Gosht Biryani",
+          desc: "Long grain aged basmati and tender mutton cooked on 'dum' under dough seal with saffron and kewra.",
+          price: "₹695",
+          veg: false,
+          badge: "Royal Special",
+          image: "https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?auto=format&fit=crop&w=600&q=80"
+        },
+        {
+          name: "Dal Gumbad-E-Khas",
+          desc: "Black lentils simmered overnight over slow embers with white butter, organic cream, and fenugreek.",
+          price: "₹495",
+          veg: true,
+          image: "https://images.unsplash.com/photo-1546833999-b9f581a1996d?auto=format&fit=crop&w=600&q=80"
+        },
+        {
+          name: "Paneer Lababdar",
+          desc: "Fresh cottage cheese bathed in rich onion-melon seed gravy with grated paneer and coriander seeds.",
+          price: "₹525",
+          veg: true,
+          image: "https://images.unsplash.com/photo-1596797038530-2c107229654b?auto=format&fit=crop&w=600&q=80"
+        }
+      ],
+      pizzas: [
+        {
+          name: "Artisan Truffle & Wild Mushroom Pizza",
+          desc: "Hand-stretched sourdough crust, roasted garlic cream, wild forest mushrooms and aromatic truffle oil drizzle.",
+          price: "₹625",
+          veg: true,
+          image: "https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=600&q=80"
+        },
+        {
+          name: "Jama Masjid Tandoori Chicken Pizza",
+          desc: "San Marzano sauce, fresh buffalo mozzarella, pulled tandoori chicken, pickled onions, green chilies.",
+          price: "₹675",
+          veg: false,
+          badge: "Fusion Hit",
+          image: "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=600&q=80"
+        },
+        {
+          name: "Gourmet Pesto & Burrata Panini",
+          desc: "Toasted artisanal ciabatta, basil pesto, fresh heirloom tomatoes, and creamy molten burrata.",
+          price: "₹495",
+          veg: true,
+          image: "https://images.unsplash.com/photo-1528735602780-2552fd46c7af?auto=format&fit=crop&w=600&q=80"
+        }
+      ],
+      drinks: [
+        {
+          name: "Popcorn Martini (Signature)",
+          desc: "Buttery toasted popcorn syrup shaken with citrus cordial, non-alcoholic botanical distillate and gold dust rim.",
+          price: "₹385",
+          veg: true,
+          badge: "Must Try",
+          image: "https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=600&q=80"
+        },
+        {
+          name: "Old Delhi Rooh-e-Zafran",
+          desc: "Royal saffron infusion, Damascus rose petals, organic chia seeds, chilled coconut milk, and silver leaf.",
+          price: "₹345",
+          veg: true,
+          image: "https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&w=600&q=80"
+        },
+        {
+          name: "Smoked Jamun Velvet Cooler",
+          desc: "Wild Indian blackberry reduction flamed with star anise, Himalayan pink salt, and sparkling tonic.",
+          price: "₹325",
+          veg: true,
+          image: "https://images.unsplash.com/photo-1536935338788-846bb9981813?auto=format&fit=crop&w=600&q=80"
+        }
+      ],
+      desserts: [
+        {
+          name: "Shahi Tukda Brioche Brulee",
+          desc: "Golden toasted saffron brioche soaked in cardamom rabri with caramelised sugar crust and pistachio flakes.",
+          price: "₹395",
+          veg: true,
+          badge: "Imperial",
+          image: "https://images.unsplash.com/photo-1587314168485-3236d6710814?auto=format&fit=crop&w=600&q=80"
+        },
+        {
+          name: "Artisan Rose & Pistachio Tiramisu",
+          desc: "Espresso-soaked savoiardi layered with rose mascarpone cream and roasted Iranian pistachios.",
+          price: "₹425",
+          veg: true,
+          image: "https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?auto=format&fit=crop&w=600&q=80"
+        },
+        {
+          name: "Roast Hazelnut Affogato",
+          desc: "Double shot of single-origin dark roast espresso poured over handcrafted Madagascar vanilla bean gelato.",
+          price: "₹320",
+          veg: true,
+          image: "https://images.unsplash.com/photo-1592663527359-cf6642f54cff?auto=format&fit=crop&w=600&q=80"
+        }
+      ]
+    };
+
+    const REVIEWS_DATA = [
+      {
+        name: "Arjun & Sneha Malhotra",
+        rating: 5,
+        source: "Tripadvisor Verified",
+        date: "October 2024",
+        text: "The view of Jama Masjid at sunset while sitting under the golden ambient lamps is completely unmatched in Delhi. The Popcorn Martini and Butter Chicken were out of this world.",
+        location: "South Delhi"
+      },
+      {
+        name: "Devika Sen",
+        rating: 4,
+        source: "Google Local Guide",
+        date: "September 2024",
+        text: "Immensely romantic rooftop vibe. The staff was courteous and helped us get the premier front-row couch facing the domes. Tandoori prawns are crispy and fresh.",
+        location: "Kolkata"
+      },
+      {
+        name: "Marcello & Elena Rossi",
+        rating: 5,
+        source: "Restaurant Guru",
+        date: "November 2024",
+        text: "An unforgettable evening in Old Delhi! Dining with the grand mosque illuminated right before your eyes feels like stepping into a Mughal royal court. Truly regal.",
+        location: "Milan, Italy"
+      },
+      {
+        name: "Rohan Varma",
+        rating: 4,
+        source: "Zomato Gold",
+        date: "August 2024",
+        text: "Outstanding ambiance and soulful Sufi background acoustics. Perfect date spot in Daryaganj. Make sure you book ahead for the evening slots.",
+        location: "Gurugram"
+      }
+    ];
+
+    const GALLERY_ITEMS = [
+      {
+        id: 1,
+        category: "view",
+        title: "Sunset over Jama Masjid Minarets",
+        img: "https://images.unsplash.com/photo-1585938389612-a552a28d6914?auto=format&fit=crop&w=800&q=80",
+        caption: "Front-row panoramic perspective from the western terrace."
+      },
+      {
+        id: 2,
+        category: "ambiance",
+        title: "The Moonlit Dome & Candlelight",
+        img: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=800&q=80",
+        caption: "Warm velvet cushions and antique brass lanterns at twilight."
+      },
+      {
+        id: 3,
+        category: "food",
+        title: "Tandoori Delicacies & Saffron Naan",
+        img: "https://images.unsplash.com/photo-1559742811-822873691df8?auto=format&fit=crop&w=800&q=80",
+        caption: "Charcoal-grilled king prawns marinated in spiced mustard."
+      },
+      {
+        id: 4,
+        category: "drinks",
+        title: "Craft Botanical Mocktails",
+        img: "https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=800&q=80",
+        caption: "Signature Popcorn Martini and Rooh-e-Zafran elixirs."
+      },
+      {
+        id: 5,
+        category: "ambiance",
+        title: "Private Diwan Seating",
+        img: "https://images.unsplash.com/photo-1543007630-9710e4a00a20?auto=format&fit=crop&w=800&q=80",
+        caption: "Royal Mughal upholstery crafted for intimate celebrations."
+      },
+      {
+        id: 6,
+        category: "food",
+        title: "Dum Pukht Biryani & Gravies",
+        img: "https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?auto=format&fit=crop&w=800&q=80",
+        caption: "Sealed clay pot biryani steamed with kewra and edible gold leaf."
+      }
+    ];
+
+    // --- MAIN APP COMPONENT ---
+    function GumbadCafeApp() {
+      // Intro state: check session
+      const [showIntro, setShowIntro] = useState(() => {
+        return !sessionStorage.getItem('gumbad_intro_shown');
+      });
+      const [introProgress, setIntroProgress] = useState(0);
+      const [currentPage, setCurrentPage] = useState('home');
+      const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+      const [dayNightMode, setDayNightMode] = useState('midnight'); // 'golden', 'blue', 'midnight'
+      const [selectedMenuCategory, setSelectedMenuCategory] = useState('starters');
+      const [lightboxImg, setLightboxImg] = useState(null);
+      const [galleryFilter, setGalleryFilter] = useState('all');
+      
+      // Reservation form state
+      const [bookingSuccess, setBookingSuccess] = useState(false);
+      const [formData, setFormData] = useState({
+        name: '',
+        phone: '',
+        guests: '2',
+        date: new Date().toISOString().split('T')[0],
+        time: '19:30',
+        tableType: 'Masjid View Balcony',
+        specialRequest: ''
+      });
+
+      // Handle Intro Sequence
+      useEffect(() => {
+        if (!showIntro) return;
+
+        const interval = setInterval(() => {
+          setIntroProgress(prev => {
+            if (prev >= 100) {
+              clearInterval(interval);
+              setTimeout(() => {
+                setShowIntro(false);
+                sessionStorage.setItem('gumbad_intro_shown', 'true');
+              }, 1200);
+              return 100;
+            }
+            return prev + 2;
+          });
+        }, 35);
+
+        return () => clearInterval(interval);
+      }, [showIntro]);
+
+      const skipIntro = () => {
+        setShowIntro(false);
+        sessionStorage.setItem('gumbad_intro_shown', 'true');
+      };
+
+      // Lucide icons re-trigger
+      useEffect(() => {
+        if (window.lucide) {
+          window.lucide.createIcons();
+        }
+      }, [currentPage, dayNightMode, selectedMenuCategory, galleryFilter, showIntro, bookingSuccess]);
+
+      // Navigation handler
+      const navigateTo = (page) => {
+        playSoftChime();
+        setCurrentPage(page);
+        setMobileMenuOpen(false);
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      };
+
+      // Reservation submission
+      const handleReservationSubmit = (e) => {
+        e.preventDefault();
+        playSoftChime();
+        setBookingSuccess(true);
+      };
+
+      return (
+        <div className="relative min-h-screen bg-midnight font-inter overflow-x-hidden flex flex-col justify-between">
+          {/* Gold Particle Background Canvas */}
+          <GoldDustCanvas />
+
+          {/* DOME OPENING INTRO OVERLAY */}
+          {showIntro && (
+            <div className="fixed inset-0 z-50 bg-[#04050b] flex flex-col items-center justify-center overflow-hidden transition-opacity duration-1000">
+              {/* Sky background with stars */}
+              <div className="absolute inset-0 jali-pattern opacity-40"></div>
+              <div className="absolute top-10 left-1/4 w-1.5 h-1.5 bg-champagne rounded-full twinkle-1"></div>
+              <div className="absolute top-24 right-1/3 w-2 h-2 bg-gold rounded-full twinkle-2"></div>
+              <div className="absolute bottom-1/3 left-1/5 w-1 h-1 bg-ivory rounded-full twinkle-3"></div>
+              <div className="absolute top-1/2 right-12 w-2 h-2 bg-amberGlow rounded-full twinkle-1"></div>
+
+              {/* Central Opening Dome Visual */}
+              <div className="relative z-10 flex flex-col items-center max-w-md w-full px-6 text-center">
+                
+                {/* Grand Split Dome SVG */}
+                <div className="relative w-64 h-64 mb-6 flex items-center justify-center">
+                  
+                  {/* Left Dome Half */}
+                  <div 
+                    className="absolute inset-0 transition-transform duration-1000 ease-out"
+                    style={{
+                      transform: introProgress >= 80 ? 'translateX(-50px) rotate(-4deg)' : 'translateX(0)',
+                      opacity: introProgress >= 95 ? 0 : 1
+                    }}
+                  >
+                    <svg viewBox="0 0 200 200" className="w-full h-full text-gold fill-none stroke-current" strokeWidth="1.8">
+                      <path 
+                        d="M100,20 C85,20 70,35 60,65 C50,95 40,120 40,170 L100,170 Z" 
+                        className="path-draw fill-deepNavy/80" 
+                      />
+                      {/* Left Finial */}
+                      <path d="M100,10 L100,20 M98,15 L100,10" stroke="#FFE494" strokeWidth="2" />
+                      {/* Jali inside dome */}
+                      <circle cx="75" cy="115" r="4" stroke="#F3E5AB" strokeWidth="1" opacity="0.6" />
+                      <circle cx="85" cy="140" r="3" stroke="#F3E5AB" strokeWidth="1" opacity="0.6" />
+                    </svg>
+                  </div>
+
+                  {/* Right Dome Half */}
+                  <div 
+                    className="absolute inset-0 transition-transform duration-1000 ease-out"
+                    style={{
+                      transform: introProgress >= 80 ? 'translateX(50px) rotate(4deg)' : 'translateX(0)',
+                      opacity: introProgress >= 95 ? 0 : 1
+                    }}
+                  >
+                    <svg viewBox="0 0 200 200" className="w-full h-full text-gold fill-none stroke-current" strokeWidth="1.8">
+                      <path 
+                        d="M100,20 C115,20 130,35 140,65 C150,95 160,120 160,170 L100,170 Z" 
+                        className="path-draw fill-deepNavy/80" 
+                      />
+                      {/* Right Finial */}
+                      <path d="M100,10 L100,20 M102,15 L100,10" stroke="#FFE494" strokeWidth="2" />
+                      {/* Jali inside dome */}
+                      <circle cx="125" cy="115" r="4" stroke="#F3E5AB" strokeWidth="1" opacity="0.6" />
+                      <circle cx="115" cy="140" r="3" stroke="#F3E5AB" strokeWidth="1" opacity="0.6" />
+                    </svg>
+                  </div>
+
+                  {/* Golden Radiance from within */}
+                  <div 
+                    className="absolute w-40 h-40 rounded-full bg-gradient-to-r from-gold via-amberGlow to-champagne blur-2xl transition-opacity duration-700 pointer-events-none"
+                    style={{ opacity: introProgress > 60 ? (introProgress / 100) : 0 }}
+                  ></div>
+
+                  {/* Central Monogram emerging */}
+                  <div 
+                    className="relative z-20 flex flex-col items-center transition-all duration-700"
+                    style={{
+                      transform: introProgress > 70 ? 'scale(1.1)' : 'scale(0.85)',
+                      opacity: introProgress > 40 ? 1 : 0
+                    }}
+                  >
+                    <span className="font-cinzel text-2xl font-bold tracking-grand text-gold-shimmer">GUMBAD</span>
+                    <span className="text-[9px] uppercase tracking-regal text-champagne/80 mt-1 font-inter">C A F E</span>
+                  </div>
+                </div>
+
+                {/* Progress Bar & Tagline */}
+                <p className="font-cormorant text-lg italic text-champagne mb-4 tracking-wider">
+                  "Dine Under the Dome of Old Delhi"
+                </p>
+
+                <div className="w-56 h-[2px] bg-gold/20 rounded-full overflow-hidden mb-6">
+                  <div 
+                    className="h-full bg-gradient-to-r from-gold-dark via-gold to-champagne transition-all duration-100 ease-linear"
+                    style={{ width: `${introProgress}%` }}
+                  ></div>
+                </div>
+
+                <button 
+                  onClick={skipIntro}
+                  className="text-xs font-cinzel tracking-regal text-gold/70 hover:text-gold border border-gold/30 hover:border-gold px-4 py-1.5 rounded transition duration-300"
+                >
+                  ENTER THE PALACE &rarr;
+                </button>
+              </div>
+            </div>
+          )}
+
+          {/* TOP NOTIFICATION / HERITAGE BAR */}
+          <div className="bg-deepNavy/90 border-b border-gold/20 text-center py-2 px-4 text-xs font-cinzel tracking-widest text-champagne/90 relative z-30 flex items-center justify-center gap-3">
+            <span className="inline-block w-1.5 h-1.5 rounded-full bg-gold animate-pulse"></span>
+            <span>EXPERIENCE MUGHAL SPLENDOR • ROOFTOP DINING OPPOSITE JAMA MASJID, DARYAGANJ</span>
+            <span className="hidden sm:inline-block text-gold/60">• RESERVATIONS RECOMMENDED FOR EVENING SLOTS</span>
+          </div>
+
+          {/* STICKY LUXURY NAVIGATION */}
+          <header className="sticky top-0 z-40 bg-midnight/90 backdrop-blur-md border-b border-gold/30 transition-all duration-300">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+              
+              {/* Brand Logo & Monogram */}
+              <div 
+                onClick={() => navigateTo('home')}
+                className="flex items-center gap-3.5 cursor-pointer group"
+              >
+                {/* Dome Monogram Icon */}
+                <div className="w-11 h-11 rounded-lg border border-gold/60 bg-gradient-to-b from-deepNavy to-indigoPalace flex items-center justify-center shadow-lg group-hover:border-gold transition duration-300 relative">
+                  <CornerFlourish />
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" className="text-gold group-hover:scale-110 transition duration-300">
+                    <path d="M12 2V4M12 4C7.5 4 4 7 4 12V20H20V12C20 7 16.5 4 12 4Z" stroke="currentColor" strokeWidth="1.5" />
+                    <circle cx="12" cy="12" r="2.5" fill="#FFE494" />
+                    <path d="M7 20V15C7 13 9 11 12 11C15 11 17 13 17 15V20" stroke="currentColor" strokeWidth="1.2" />
+                  </svg>
+                </div>
+                <div>
+                  <h1 className="font-cinzel text-xl font-bold tracking-grand text-gold-foil">GUMBAD</h1>
+                  <p className="text-[9px] uppercase tracking-regal text-champagne/70 font-cinzel">Rooftop Cafe • Old Delhi</p>
+                </div>
+              </div>
+
+              {/* Desktop Navigation Links */}
+              <nav className="hidden lg:flex items-center space-x-7">
+                {[
+                  { id: 'home', label: 'Home' },
+                  { id: 'menu', label: 'Royal Menu' },
+                  { id: 'story', label: 'Our Story' },
+                  { id: 'experience', label: 'Experience' },
+                  { id: 'gallery', label: 'Gallery' },
+                  { id: 'reviews', label: 'Reviews' },
+                  { id: 'events', label: 'Private Events' },
+                ].map((item) => (
+                  <button
+                    key={item.id}
+                    onClick={() => navigateTo(item.id)}
+                    className={`font-cinzel text-xs uppercase tracking-regal py-1 relative transition-all duration-300 ${
+                      currentPage === item.id 
+                        ? 'text-gold font-semibold' 
+                        : 'text-ivory/80 hover:text-champagne'
+                    }`}
+                  >
+                    {item.label}
+                    {currentPage === item.id && (
+                      <span className="absolute bottom-0 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-gold to-transparent"></span>
+                    )}
+                  </button>
+                ))}
+              </nav>
+
+              {/* Action Button & Hamburger */}
+              <div className="flex items-center gap-4">
+                <button
+                  onClick={() => navigateTo('reserve')}
+                  className="hidden sm:inline-flex items-center gap-2 bg-gradient-to-r from-[#997F24] via-gold to-[#D4AF37] hover:brightness-110 text-midnight font-cinzel font-bold text-xs uppercase tracking-widest px-5 py-2.5 rounded shadow-lg border border-gold-shimmer transition duration-300"
+                >
+                  <i data-lucide="calendar" className="w-3.5 h-3.5 text-midnight"></i>
+                  <span>Reserve Table</span>
+                </button>
+
+                {/* Mobile Menu Trigger */}
+                <button
+                  onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                  className="lg:hidden text-gold p-2 border border-gold/40 rounded bg-deepNavy/80 focus:outline-none"
+                  aria-label="Toggle Menu"
+                >
+                  <i data-lucide={mobileMenuOpen ? "x" : "menu"} className="w-6 h-6"></i>
+                </button>
+              </div>
+            </div>
+
+            {/* Mobile Navigation Drawer */}
+            {mobileMenuOpen && (
+              <div className="lg:hidden bg-midnight/98 border-b border-gold/40 px-6 py-6 fade-in-up">
+                <div className="flex flex-col space-y-4">
+                  {[
+                    { id: 'home', label: 'Home' },
+                    { id: 'menu', label: 'Royal Menu' },
+                    { id: 'story', label: 'Our Story & Jama Masjid' },
+                    { id: 'experience', label: 'Rooftop Day-to-Night View' },
+                    { id: 'gallery', label: 'Mughal Gallery' },
+                    { id: 'reviews', label: 'Guest Reviews' },
+                    { id: 'events', label: 'Events & Groups' },
+                    { id: 'reserve', label: 'Reserve A Table' },
+                  ].map((item) => (
+                    <button
+                      key={item.id}
+                      onClick={() => navigateTo(item.id)}
+                      className={`text-left font-cinzel text-sm uppercase tracking-regal py-2 border-b border-gold/10 ${
+                        currentPage === item.id ? 'text-gold pl-2 border-l-2 border-gold font-bold' : 'text-ivory/80'
+                      }`}
+                    >
+                      {item.label}
+                    </button>
+                  ))}
+                  <div className="pt-2">
+                    <button
+                      onClick={() => navigateTo('reserve')}
+                      className="w-full text-center bg-gold text-midnight font-cinzel font-bold text-xs uppercase tracking-widest py-3 rounded"
+                    >
+                      Book Table Now
+                    </button>
+                  </div>
+                </div>
+              </div>
+            )}
+          </header>
+
+          {/* MAIN VIEW CONTENT CONTAINER */}
+          <main className="flex-grow">
+            
+            {/* VIEW: HOME */}
+            {currentPage === 'home' && (
+              <div className="fade-in-up">
+                {/* HERO SECTION */}
+                <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden py-16 px-4">
+                  {/* Background Mughal Dusk Image */}
+                  <div className="absolute inset-0 z-0">
+                    <img
+                      src="https://images.unsplash.com/photo-1585938389612-a552a28d6914?auto=format&fit=crop&w=1800&q=85"
+                      alt="Jama Masjid View at Dusk from Gumbad Cafe"
+                      className="w-full h-full object-cover object-center filter brightness-[0.45] scale-105 transform hover:scale-100 transition-transform duration-[10000ms]"
+                    />
+                    {/* Royal Gradient Overlays */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-midnight via-midnight/60 to-deepNavy/80"></div>
+                    <div className="absolute inset-0 jali-screen opacity-60"></div>
+                  </div>
+
+                  {/* Centered Arch Hero Content */}
+                  <div className="relative z-10 max-w-4xl mx-auto text-center px-4">
+                    
+                    {/* Top Regal Tag */}
+                    <div className="inline-flex items-center gap-2 border border-gold/50 bg-deepNavy/80 px-4 py-1.5 rounded-full mb-6">
+                      <span className="w-2 h-2 rounded-full bg-amberGlow"></span>
+                      <span className="font-cinzel text-[11px] uppercase tracking-regal text-champagne">
+                        ROOFTOP SANCTUARY • OPPOSITE JAMA MASJID
+                      </span>
+                    </div>
+
+                    {/* Headline */}
+                    <h1 className="font-cinzel text-4xl sm:text-6xl md:text-7xl font-bold tracking-wider leading-tight mb-6">
+                      <span className="block text-ivory">FEAST UNDER</span>
+                      <span className="text-gold-foil">THE HISTORIC DOME</span>
+                    </h1>
+
+                    {/* Subtitle */}
+                    <p className="font-cormorant text-xl sm:text-2xl italic text-champagne/90 max-w-2xl mx-auto mb-10 leading-relaxed">
+                      Where the poetry of Old Delhi meets charcoal-smoked royal Mughlai gastronomy and artisanal Continental indulgence.
+                    </p>
+
+                    {/* CTAs */}
+                    <div className="flex flex-col sm:flex-row items-center justify-center gap-5">
+                      <button
+                        onClick={() => navigateTo('reserve')}
+                        className="w-full sm:w-auto bg-gradient-to-r from-gold via-champagne to-gold text-midnight font-cinzel font-bold text-xs uppercase tracking-regal px-8 py-4 rounded shadow-2xl hover:brightness-110 transition duration-300 flex items-center justify-center gap-3 group"
+                      >
+                        <span>Reserve A Sunset Table</span>
+                        <i data-lucide="chevron-right" className="w-4 h-4 group-hover:translate-x-1 transition duration-200"></i>
+                      </button>
+
+                      <button
+                        onClick={() => navigateTo('menu')}
+                        className="w-full sm:w-auto bg-deepNavy/80 hover:bg-indigoPalace text-champagne border border-gold/60 font-cinzel text-xs uppercase tracking-regal px-8 py-4 rounded transition duration-300 backdrop-blur-sm"
+                      >
+                        Explore Royal Menu
+                      </button>
+                    </div>
+
+                    {/* Honest Rating Banner Teaser */}
+                    <div className="mt-14 pt-8 border-t border-gold/20 flex flex-wrap items-center justify-center gap-8 text-xs font-cinzel text-champagne/80">
+                      <div className="flex items-center gap-2">
+                        <i data-lucide="star" className="w-4 h-4 text-gold fill-gold"></i>
+                        <span>3.6 / 5 on Restaurant Guru</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <i data-lucide="star" className="w-4 h-4 text-gold fill-gold"></i>
+                        <span>3.5 / 5 on Tripadvisor</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <i data-lucide="map-pin" className="w-4 h-4 text-gold"></i>
+                        <span>Gate 3, Jama Masjid, Daryaganj</span>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+
+                <GoldDivider title="MUGHAL SPLENDOR" subtitle="An unhurried sanctuary in the heart of Shahjahanabad" />
+
+                {/* ABOUT TEASER WITH JHAROKHA ARCH FRAME */}
+                <section className="py-16 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
+                  <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                    
+                    {/* Arch Framed Image */}
+                    <div className="lg:col-span-5 relative">
+                      <div className="relative p-2 bg-gradient-to-b from-gold/40 via-gold/10 to-gold/40 rounded-t-full shadow-2xl">
+                        <div className="jharokha-arch overflow-hidden bg-deepNavy">
+                          <img
+                            src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=800&q=80"
+                            alt="Gumbad Cafe Romantic Ambiance"
+                            className="w-full h-[420px] object-cover hover:scale-105 transition duration-700"
+                          />
+                        </div>
+                      </div>
+                      {/* Floating Badge */}
+                      <div className="absolute -bottom-4 -right-4 bg-deepNavy border border-gold/60 p-4 rounded shadow-2xl max-w-[200px] text-center backdrop-blur-md">
+                        <span className="font-cinzel text-2xl font-bold text-gold block">180°</span>
+                        <span className="text-[10px] font-cinzel uppercase tracking-widest text-champagne/90">Unobstructed Dome & Minaret Vista</span>
+                      </div>
+                    </div>
+
+                    {/* Text Teaser */}
+                    <div className="lg:col-span-7 space-y-6">
+                      <div className="inline-block border-b border-gold/40 pb-1">
+                        <span className="font-cinzel text-xs tracking-grand text-gold uppercase">The Rooftop Heritage</span>
+                      </div>
+                      <h2 className="font-cinzel text-3xl sm:text-4xl font-bold text-ivory leading-snug">
+                        Dine Above the Bustle, <br />
+                        <span className="text-gold-foil">In View of Shah Jahan's Masterpiece</span>
+                      </h2>
+                      <p className="font-cormorant text-lg sm:text-xl text-champagne/80 leading-relaxed">
+                        Named after the celestial domes that crown Old Delhi, <strong>Gumbad Cafe</strong> was envisioned as a tranquil oasis above the bustling bazaars of Daryaganj. As the evening Azan echoes softly through the city and the sandstone minarets bathe in sunset amber, our terrace transforms into a palace courtyard of light, aromas, and timeless conversation.
+                      </p>
+                      
+                      <div className="grid grid-cols-2 gap-4 pt-2">
+                        <div className="border border-gold/30 p-4 rounded bg-deepNavy/50">
+                          <i data-lucide="moon" className="w-5 h-5 text-gold mb-2"></i>
+                          <h4 className="font-cinzel text-sm text-ivory font-semibold">Romantic Nights</h4>
+                          <p className="text-xs text-champagne/70 mt-1">Candlelit diwans with ambient Sufi strings.</p>
+                        </div>
+                        <div className="border border-gold/30 p-4 rounded bg-deepNavy/50">
+                          <i data-lucide="utensils" className="w-5 h-5 text-gold mb-2"></i>
+                          <h4 className="font-cinzel text-sm text-ivory font-semibold">Regal Cuisine</h4>
+                          <p className="text-xs text-champagne/70 mt-1">Slow-charred kebabs to artisan woodfired pizzas.</p>
+                        </div>
+                      </div>
+
+                      <div className="pt-2">
+                        <button
+                          onClick={() => navigateTo('story')}
+                          className="inline-flex items-center gap-2 text-gold hover:text-champagne font-cinzel text-xs tracking-regal uppercase group"
+                        >
+                          <span>Discover the full chronicle</span>
+                          <i data-lucide="arrow-right" className="w-4 h-4 group-hover:translate-x-1.5 transition duration-300"></i>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+
+                <GoldDivider title="CHEF'S SIGNATURES" subtitle="Charcoal-flamed kebabs, velvety curries & modern elixirs" />
+
+                {/* SIGNATURE DISHES TEASER GRID */}
+                <section className="py-12 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+                  <div className="text-center max-w-2xl mx-auto mb-12">
+                    <h2 className="font-cinzel text-3xl font-bold text-ivory">Royal Gastronomic Highlights</h2>
+                    <p className="font-cormorant text-lg italic text-champagne/75 mt-2">Crafted with secret potli spices, saffron from Kashmir, and modern flair</p>
+                  </div>
+
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    {[
+                      MENU_ITEMS.tandoor[0],
+                      MENU_ITEMS.mains[0],
+                      MENU_ITEMS.starters[0],
+                      MENU_ITEMS.drinks[0]
+                    ].map((dish, idx) => (
+                      <div 
+                        key={idx} 
+                        className="royal-border bg-deepNavy/60 rounded p-4 flex flex-col justify-between hover:bg-deepNavy/90 transition duration-300 group"
+                      >
+                        <CornerFlourish />
+                        <div>
+                          {/* Dish Image */}
+                          <div className="relative h-48 overflow-hidden rounded mb-4">
+                            <img 
+                              src={dish.image} 
+                              alt={dish.name}
+                              className="w-full h-full object-cover group-hover:scale-110 transition duration-500"
+                            />
+                            {dish.badge && (
+                              <span className="absolute top-2 right-2 bg-midnight/90 text-gold border border-gold/40 text-[10px] font-cinzel uppercase px-2 py-0.5 rounded">
+                                {dish.badge}
+                              </span>
+                            )}
+                            <span className={`absolute bottom-2 left-2 w-3.5 h-3.5 rounded-full border-2 border-white flex items-center justify-center ${dish.veg ? 'bg-green-600' : 'bg-red-600'}`}></span>
+                          </div>
+
+                          <h3 className="font-cinzel text-base font-bold text-champagne mb-1 group-hover:text-gold transition">
+                            {dish.name}
+                          </h3>
+                          <p className="text-xs text-ivory/70 font-light line-clamp-2 mb-3">
+                            {dish.desc}
+                          </p>
+                        </div>
+
+                        <div className="flex items-center justify-between pt-3 border-t border-gold/20">
+                          <span className="font-cinzel text-sm font-bold text-gold">{dish.price}</span>
+                          <button
+                            onClick={() => navigateTo('menu')}
+                            className="text-[11px] font-cinzel tracking-widest text-champagne/80 hover:text-gold uppercase"
+                          >
+                            View &rarr;
+                          </button>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+
+                  <div className="text-center mt-10">
+                    <button
+                      onClick={() => navigateTo('menu')}
+                      className="inline-flex items-center gap-3 border border-gold text-gold hover:bg-gold hover:text-midnight font-cinzel text-xs uppercase tracking-regal px-8 py-3.5 rounded transition duration-300"
+                    >
+                      <i data-lucide="book-open" className="w-4 h-4"></i>
+                      <span>View Complete Royal Menu</span>
+                    </button>
+                  </div>
+                </section>
+
+                <GoldDivider title="ATMOSPHERE" subtitle="The Changing Light of Old Delhi" />
+
+                {/* DAY TO NIGHT INTERACTIVE TEASER */}
+                <section className="py-12 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
+                  <div className="royal-border bg-deepNavy/80 p-6 sm:p-10 rounded-lg text-center">
+                    <CornerFlourish />
+                    <span className="font-cinzel text-xs text-gold uppercase tracking-widest">Interactive Panorama</span>
+                    <h2 className="font-cinzel text-2xl sm:text-3xl font-bold text-ivory mt-2 mb-4">
+                      Witness The Shifting Sky Over Jama Masjid
+                    </h2>
+                    <p className="font-cormorant text-lg text-champagne/80 max-w-2xl mx-auto mb-8">
+                      Experience how the golden dusk of Delhi deepens into celestial blue hour and magical midnight beneath our cafe terrace.
+                    </p>
+
+                    <button
+                      onClick={() => navigateTo('experience')}
+                      className="bg-gradient-to-r from-gold via-champagne to-gold text-midnight font-cinzel font-bold text-xs uppercase tracking-regal px-8 py-3.5 rounded shadow-lg hover:brightness-110 transition duration-300 inline-flex items-center gap-2"
+                    >
+                      <i data-lucide="sun-moon" className="w-4 h-4 text-midnight"></i>
+                      <span>Launch Day-To-Night Terrace Simulator</span>
+                    </button>
+                  </div>
+                </section>
+
+                {/* REVIEWS TEASER CAROUSEL */}
+                <section className="py-16 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
+                  <div className="text-center mb-10">
+                    <span className="font-cinzel text-xs tracking-grand text-gold uppercase">Patron Testimonials</span>
+                    <h2 className="font-cinzel text-3xl font-bold text-ivory mt-2">Echoes From Under The Dome</h2>
+                  </div>
+
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    {REVIEWS_DATA.slice(0, 2).map((rev, idx) => (
+                      <div key={idx} className="royal-border bg-deepNavy/50 p-6 rounded relative">
+                        <CornerFlourish />
+                        <div className="flex items-center gap-1 text-gold mb-3">
+                          {Array.from({ length: rev.rating }).map((_, i) => (
+                            <i key={i} data-lucide="star" className="w-4 h-4 fill-gold"></i>
+                          ))}
+                        </div>
+                        <p className="font-cormorant italic text-lg text-champagne/90 mb-4 leading-relaxed">
+                          "{rev.text}"
+                        </p>
+                        <div className="flex items-center justify-between text-xs border-t border-gold/20 pt-3">
+                          <span className="font-cinzel font-semibold text-ivory">{rev.name}</span>
+                          <span className="text-gold/70">{rev.source}</span>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+
+                  <div className="text-center mt-6">
+                    <button
+                      onClick={() => navigateTo('reviews')}
+                      className="text-xs font-cinzel text-gold hover:text-champagne tracking-regal uppercase"
+                    >
+                      Read All Honest Verified Reviews &rarr;
+                    </button>
+                  </div>
+                </section>
+
+                {/* RESERVATION CALLOUT BANNER */}
+                <section className="py-16 px-4 bg-gradient-to-b from-indigoPalace/60 via-deepNavy to-midnight border-t border-gold/30 text-center">
+                  <div className="max-w-3xl mx-auto">
+                    <SkylineSilhouette className="text-gold/25 mb-4" />
+                    <h2 className="font-cinzel text-3xl sm:text-4xl font-bold text-gold-foil mb-4">
+                      An Evening Destined For Memory
+                    </h2>
+                    <p className="font-cormorant text-xl text-champagne/80 mb-8 max-w-xl mx-auto">
+                      Front-row balcony diwans facing Jama Masjid fill swiftly for sunset and night hours. Secure your table in advance.
+                    </p>
+                    <button
+                      onClick={() => navigateTo('reserve')}
+                      className="bg-gold text-midnight hover:bg-champagne font-cinzel font-bold text-xs uppercase tracking-regal px-9 py-4 rounded shadow-2xl transition duration-300"
+                    >
+                      Book Your Balcony Diwan
+                    </button>
+                  </div>
+                </section>
+              </div>
+            )}
+
+            {/* VIEW: MENU */}
+            {currentPage === 'menu' && (
+              <div className="fade-in-up py-12 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+                <div className="text-center max-w-3xl mx-auto mb-10">
+                  <div className="inline-block border border-gold/40 px-4 py-1 rounded-full text-gold font-cinzel text-xs tracking-grand uppercase mb-4 bg-deepNavy/60">
+                    The Imperial Repast
+                  </div>
+                  <h1 className="font-cinzel text-4xl sm:text-5xl font-bold text-gold-foil mb-4">Royal Culinary Collection</h1>
+                  <p className="font-cormorant text-xl italic text-champagne/80">
+                    Traditional Old Delhi khansama recipes harmoniously combined with contemporary global specialties.
+                  </p>
+                </div>
+
+                {/* Menu Category Tabs */}
+                <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mb-12">
+                  {[
+                    { id: 'starters', label: 'Starters' },
+                    { id: 'tandoor', label: 'Tandoor & Kebabs' },
+                    { id: 'mains', label: 'Mains & Dum Biryani' },
+                    { id: 'pizzas', label: 'Pizzas & Sandwiches' },
+                    { id: 'drinks', label: 'Signature Drinks & Mocktails' },
+                    { id: 'desserts', label: 'Coffee & Imperial Desserts' }
+                  ].map((cat) => (
+                    <button
+                      key={cat.id}
+                      onClick={() => {
+                        playSoftChime();
+                        setSelectedMenuCategory(cat.id);
+                      }}
+                      className={`font-cinzel text-xs uppercase tracking-wider px-5 py-2.5 rounded transition-all duration-300 ${
+                        selectedMenuCategory === cat.id
+                          ? 'bg-gold text-midnight font-bold shadow-lg border border-gold-shimmer'
+                          : 'bg-deepNavy/70 text-champagne/80 hover:bg-deepNavy hover:text-gold border border-gold/30'
+                      }`}
+                    >
+                      {cat.label}
+                    </button>
+                  ))}
+                </div>
+
+                {/* Menu Items Grid */}
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                  {MENU_ITEMS[selectedMenuCategory]?.map((dish, i) => (
+                    <div
+                      key={i}
+                      className="royal-border bg-deepNavy/70 rounded-lg p-5 flex flex-col sm:flex-row gap-5 hover:bg-deepNavy/90 transition duration-300"
+                    >
+                      <CornerFlourish />
+                      
+                      {/* Image Frame */}
+                      <div className="sm:w-40 h-36 flex-shrink-0 relative overflow-hidden rounded border border-gold/30">
+                        <img
+                          src={dish.image}
+                          alt={dish.name}
+                          className="w-full h-full object-cover hover:scale-110 transition duration-500"
+                        />
+                        <span 
+                          className={`absolute top-2 left-2 w-3.5 h-3.5 rounded-full border-2 border-white ${
+                            dish.veg ? 'bg-green-600' : 'bg-red-600'
+                          }`}
+                          title={dish.veg ? "Vegetarian" : "Non-Vegetarian"}
+                        ></span>
+                      </div>
+
+                      {/* Content */}
+                      <div className="flex-1 flex flex-col justify-between">
+                        <div>
+                          <div className="flex items-start justify-between gap-2 mb-1">
+                            <h3 className="font-cinzel text-base font-bold text-champagne">
+                              {dish.name}
+                            </h3>
+                            {dish.badge && (
+                              <span className="text-[9px] font-cinzel tracking-widest bg-gold/20 text-gold border border-gold/40 px-2 py-0.5 rounded whitespace-nowrap">
+                                {dish.badge}
+                              </span>
+                            )}
+                          </div>
+                          <p className="font-cormorant text-sm sm:text-base italic text-champagne/70 leading-relaxed mb-3">
+                            {dish.desc}
+                          </p>
+                        </div>
+                        <div className="flex items-center justify-between pt-2 border-t border-gold/20">
+                          <span className="font-cinzel text-xs uppercase tracking-widest text-gold/70">
+                            {dish.veg ? 'Vegetarian' : 'Non-Veg'}
+                          </span>
+                          <span className="font-cinzel text-base font-bold text-gold">{dish.price}</span>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Dietary Notice */}
+                <div className="mt-14 max-w-2xl mx-auto text-center border border-gold/30 bg-deepNavy/40 p-6 rounded">
+                  <h4 className="font-cinzel text-xs text-gold uppercase tracking-widest mb-1">Royal Hospitality Promise</h4>
+                  <p className="text-xs text-champagne/70">
+                    All our meats are 100% Halal certified. Please inform our service captains of any food allergies or spice preferences upon seating. Prices are inclusive of all culinary taxes.
+                  </p>
+                </div>
+              </div>
+            )}
+
+            {/* VIEW: OUR STORY */}
+            {currentPage === 'story' && (
+              <div className="fade-in-up py-12 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
+                <div className="text-center max-w-3xl mx-auto mb-12">
+                  <span className="font-cinzel text-xs tracking-grand text-gold uppercase">The Heritage Chronicle</span>
+                  <h1 className="font-cinzel text-4xl sm:text-5xl font-bold text-gold-foil mt-2 mb-4">Under The Dome of Old Delhi</h1>
+                  <p className="font-cormorant text-xl italic text-champagne/85">
+                    A tribute to the majestic architecture of Shahjahanabad and the enduring warmth of Daryaganj hospitality.
+                  </p>
+                </div>
+
+                {/* Jama Masjid Reverence Section */}
+                <div className="royal-border bg-deepNavy/80 p-8 rounded-lg mb-16 relative overflow-hidden">
+                  <CornerFlourish />
+                  <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+                    <div className="md:col-span-7 space-y-4">
+                      <div className="flex items-center gap-2 text-gold font-cinzel text-xs uppercase tracking-widest">
+                        <i data-lucide="shield-alert" className="w-4 h-4"></i>
+                        <span>Reverence for a National Monument</span>
+                      </div>
+                      <h2 className="font-cinzel text-2xl font-bold text-ivory">A Sacred Neighbor: Jama Masjid</h2>
+                      <p className="font-cormorant text-lg text-champagne/80 leading-relaxed">
+                        Commissioned by Mughal Emperor Shah Jahan in 1644 and completed in 1656, the Masjid-i Jahān-Numā stands as an immortal testament to red sandstone and white marble craftsmanship.
+                      </p>
+                      <p className="text-xs text-champagne/70 leading-relaxed">
+                        At Gumbad Cafe, we hold profound respect for this living landmark. Our rooftop space is curated to provide a peaceful, unobtrusive vantage point where guests from all corners of the world can admire its grandeur in an ambiance of calm, soft melodies, and gracious hospitality.
+                      </p>
+                    </div>
+                    <div className="md:col-span-5">
+                      <div className="jharokha-arch overflow-hidden border border-gold/40 shadow-2xl">
+                        <img 
+                          src="https://images.unsplash.com/photo-1585938389612-a552a28d6914?auto=format&fit=crop&w=600&q=80" 
+                          alt="Jama Masjid Silhouette"
+                          className="w-full h-64 object-cover"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Vertical Timeline */}
+                <div className="relative border-l-2 border-gold/30 ml-4 sm:ml-32 pl-6 sm:pl-10 space-y-12 my-10">
+                  {[
+                    {
+                      year: "1656 AD",
+                      title: "The Genesis of the Grand Dome",
+                      desc: "Emperor Shah Jahan inaugurates the Masjid-i-Jahan Numa, defining the iconic dome skyline of Daryaganj forever."
+                    },
+                    {
+                      year: "2019 AD",
+                      title: "The Vision for a Palace Terrace",
+                      desc: "The founders scout an untouched heritage rooftop directly facing Gate 3, envisioning a peaceful haven for lovers of food and architecture."
+                    },
+                    {
+                      year: "2021 AD",
+                      title: "Crafting the Mughal Jharokhas",
+                      desc: "Artisans install handcrafted brass lanterns, velvet diwans, and the iconic dome monogram, opening the doors as Gumbad Cafe."
+                    },
+                    {
+                      year: "PRESENT",
+                      title: "A Beloved Old Delhi Landmark",
+                      desc: "Welcoming travelers, families, and couples from around the globe to taste slow-cooked charcoal delicacies under starry skies."
+                    }
+                  ].map((item, idx) => (
+                    <div key={idx} className="relative group">
+                      {/* Timeline Dome Marker */}
+                      <div className="absolute -left-[35px] sm:-left-[51px] top-0 w-8 h-8 rounded-full bg-deepNavy border-2 border-gold flex items-center justify-center text-gold shadow-lg group-hover:scale-110 transition">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                          <path d="M12 2C8 2 4 5 4 10V20H20V10C20 5 16 2 12 2Z" />
+                        </svg>
+                      </div>
+
+                      <span className="font-cinzel text-xs font-bold tracking-widest text-gold block mb-1">
+                        {item.year}
+                      </span>
+                      <h3 className="font-cinzel text-xl font-bold text-ivory mb-2">
+                        {item.title}
+                      </h3>
+                      <p className="font-cormorant text-base text-champagne/80 max-w-xl leading-relaxed">
+                        {item.desc}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {/* VIEW: EXPERIENCE (DAY TO NIGHT SLIDER) */}
+            {currentPage === 'experience' && (
+              <div className="fade-in-up py-12 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
+                <div className="text-center max-w-3xl mx-auto mb-10">
+                  <span className="font-cinzel text-xs tracking-grand text-gold uppercase">Atmospheric Terrace Simulator</span>
+                  <h1 className="font-cinzel text-4xl sm:text-5xl font-bold text-gold-foil mt-2 mb-4">
+                    The 3 Moods of Gumbad
+                  </h1>
+                  <p className="font-cormorant text-xl italic text-champagne/80">
+                    Switch between the hours to witness how the mood, light, and rooftop ambiance transform.
+                  </p>
+                </div>
+
+                {/* Time Mode Buttons */}
+                <div className="flex justify-center gap-4 mb-8">
+                  {[
+                    { id: 'golden', label: 'Golden Hour (5:30 PM)', icon: 'sun' },
+                    { id: 'blue', label: 'Blue Hour (6:45 PM)', icon: 'cloud-sun' },
+                    { id: 'midnight', label: 'Midnight Magic (9:30 PM)', icon: 'moon' }
+                  ].map((mode) => (
+                    <button
+                      key={mode.id}
+                      onClick={() => {
+                        playSoftChime();
+                        setDayNightMode(mode.id);
+                      }}
+                      className={`font-cinzel text-xs uppercase tracking-wider px-5 py-3 rounded-lg border flex items-center gap-2 transition duration-300 ${
+                        dayNightMode === mode.id
+                          ? 'bg-gold text-midnight border-gold font-bold shadow-lg'
+                          : 'bg-deepNavy/80 text-champagne border-gold/30 hover:border-gold'
+                      }`}
+                    >
+                      <i data-lucide={mode.icon} className="w-4 h-4"></i>
+                      <span className="hidden sm:inline">{mode.label}</span>
+                      <span className="sm:hidden">{mode.label.split(' ')[0]}</span>
+                    </button>
+                  ))}
+                </div>
+
+                {/* Day-to-Night Simulator Display */}
+                <div className="relative royal-border rounded-lg overflow-hidden h-[480px] sm:h-[550px] shadow-2xl transition-all duration-700">
+                  <CornerFlourish />
+                  
+                  {/* Base Photo of the Rooftop View */}
+                  <img
+                    src="https://images.unsplash.com/photo-1585938389612-a552a28d6914?auto=format&fit=crop&w=1600&q=85"
+                    alt="Gumbad Cafe Day to Night Transition"
+                    className="w-full h-full object-cover transition-all duration-700"
+                    style={{
+                      filter: dayNightMode === 'golden' 
+                        ? 'sepia(0.35) saturate(1.4) brightness(0.95)'
+                        : dayNightMode === 'blue' 
+                        ? 'hue-rotate(190deg) saturate(1.2) brightness(0.7)' 
+                        : 'brightness(0.35) contrast(1.2)'
+                    }}
+                  />
+
+                  {/* Atmospheric Light Overlays */}
+                  {dayNightMode === 'golden' && (
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#4a2605]/80 via-[#ff9900]/20 to-transparent transition-opacity duration-700 pointer-events-none"></div>
+                  )}
+                  {dayNightMode === 'blue' && (
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#09153a]/80 via-[#1b3b8c]/25 to-transparent transition-opacity duration-700 pointer-events-none"></div>
+                  )}
+                  {dayNightMode === 'midnight' && (
+                    <div className="absolute inset-0 bg-gradient-to-t from-midnight via-deepNavy/80 to-transparent transition-opacity duration-700 pointer-events-none">
+                      <div className="absolute top-12 left-1/3 w-2 h-2 bg-amberGlow rounded-full twinkle-1"></div>
+                      <div className="absolute top-20 right-1/4 w-1.5 h-1.5 bg-champagne rounded-full twinkle-2"></div>
+                    </div>
+                  )}
+
+                  {/* Narrative Card Overlay */}
+                  <div className="absolute bottom-6 left-6 right-6 sm:left-10 sm:right-auto sm:max-w-md bg-midnight/85 backdrop-blur-md border border-gold/50 p-6 rounded shadow-2xl">
+                    <span className="text-[10px] font-cinzel text-gold tracking-widest uppercase block mb-1">
+                      Current Atmosphere
+                    </span>
+                    <h3 className="font-cinzel text-xl font-bold text-champagne mb-2">
+                      {dayNightMode === 'golden' && 'Golden Hour: Sandstone Radiance'}
+                      {dayNightMode === 'blue' && 'Blue Hour: Twilight & Lantern Glow'}
+                      {dayNightMode === 'midnight' && 'Midnight: Starlit Dome & Candlelight'}
+                    </h3>
+                    <p className="font-cormorant text-sm sm:text-base text-ivory/80 leading-relaxed mb-4">
+                      {dayNightMode === 'golden' && 'The last rays of the Delhi sun wash over the minarets in warm amber tones. Perfect for leisurely iced mocktails and crisp kebab platters.'}
+                      {dayNightMode === 'blue' && 'As the evening calls echo, the sky turns deep royal sapphire and our brass lanterns flicker to life. The cafe is filled with soulful Sufi instrumentals.'}
+                      {dayNightMode === 'midnight' && 'The city settles into a peaceful slumber while our terrace glows under the starry velvet sky. The signature Butter Chicken and Biryani take center stage.'}
+                    </p>
+                    <button
+                      onClick={() => navigateTo('reserve')}
+                      className="text-xs font-cinzel text-gold hover:text-champagne tracking-regal uppercase flex items-center gap-1.5"
+                    >
+                      <span>Book this time slot</span>
+                      <i data-lucide="calendar" className="w-3.5 h-3.5"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {/* VIEW: GALLERY */}
+            {currentPage === 'gallery' && (
+              <div className="fade-in-up py-12 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+                <div className="text-center max-w-3xl mx-auto mb-10">
+                  <span className="font-cinzel text-xs tracking-grand text-gold uppercase">Visual Splendor</span>
+                  <h1 className="font-cinzel text-4xl sm:text-5xl font-bold text-gold-foil mt-2 mb-4">The Mughal Gallery</h1>
+                  <p className="font-cormorant text-xl italic text-champagne/80">
+                    Capturing intimate evenings, panoramic vistas, and royal gastronomy.
+                  </p>
+                </div>
+
+                {/* Filter Buttons */}
+                <div className="flex flex-wrap justify-center gap-3 mb-10">
+                  {[
+                    { id: 'all', label: 'All Perspectives' },
+                    { id: 'view', label: 'Jama Masjid Views' },
+                    { id: 'food', label: 'Culinary Craft' },
+                    { id: 'ambiance', label: 'Terrace Ambiance' },
+                    { id: 'drinks', label: 'Signature Drinks' }
+                  ].map(f => (
+                    <button
+                      key={f.id}
+                      onClick={() => {
+                        playSoftChime();
+                        setGalleryFilter(f.id);
+                      }}
+                      className={`font-cinzel text-xs uppercase tracking-wider px-4 py-2 rounded transition ${
+                        galleryFilter === f.id
+                          ? 'bg-gold text-midnight font-bold'
+                          : 'bg-deepNavy/60 text-champagne/70 hover:text-gold border border-gold/30'
+                      }`}
+                    >
+                      {f.label}
+                    </button>
+                  ))}
+                </div>
+
+                {/* Masonry-Style Gallery Grid */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                  {GALLERY_ITEMS
+                    .filter(item => galleryFilter === 'all' || item.category === galleryFilter)
+                    .map((item) => (
+                      <div
+                        key={item.id}
+                        onClick={() => setLightboxImg(item)}
+                        className="group relative cursor-pointer overflow-hidden rounded royal-border bg-deepNavy h-80"
+                      >
+                        <CornerFlourish />
+                        <img
+                          src={item.img}
+                          alt={item.title}
+                          className="w-full h-full object-cover group-hover:scale-110 transition duration-700"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-midnight via-midnight/40 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex flex-col justify-end p-6">
+                          <span className="font-cinzel text-xs text-gold uppercase tracking-widest">{item.category}</span>
+                          <h3 className="font-cinzel text-lg font-bold text-ivory mb-1">{item.title}</h3>
+                          <p className="font-cormorant text-sm italic text-champagne/80">{item.caption}</p>
+                          <div className="mt-2 text-xs font-cinzel text-gold flex items-center gap-1">
+                            <i data-lucide="maximize-2" className="w-3.5 h-3.5"></i>
+                            <span>View Enlarged</span>
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                </div>
+
+                {/* Lightbox Modal */}
+                {lightboxImg && (
+                  <div 
+                    className="fixed inset-0 z-50 bg-midnight/95 backdrop-blur-md flex items-center justify-center p-4"
+                    onClick={() => setLightboxImg(null)}
+                  >
+                    <div 
+                      className="relative max-w-4xl w-full bg-deepNavy royal-border p-3 rounded"
+                      onClick={e => e.stopPropagation()}
+                    >
+                      <button
+                        onClick={() => setLightboxImg(null)}
+                        className="absolute -top-10 right-0 text-gold hover:text-champagne font-cinzel text-sm flex items-center gap-1"
+                      >
+                        <i data-lucide="x" className="w-5 h-5"></i>
+                        <span>CLOSE</span>
+                      </button>
+                      <img
+                        src={lightboxImg.img}
+                        alt={lightboxImg.title}
+                        className="w-full max-h-[70vh] object-contain rounded"
+                      />
+                      <div className="pt-4 text-center">
+                        <h3 className="font-cinzel text-xl text-gold font-bold">{lightboxImg.title}</h3>
+                        <p className="font-cormorant text-base text-champagne/80 italic">{lightboxImg.caption}</p>
+                      </div>
+                    </div>
+                  </div>
+                )}
+              </div>
+            )}
+
+            {/* VIEW: REVIEWS */}
+            {currentPage === 'reviews' && (
+              <div className="fade-in-up py-12 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
+                <div className="text-center max-w-3xl mx-auto mb-12">
+                  <span className="font-cinzel text-xs tracking-grand text-gold uppercase">Honest Patron Feedback</span>
+                  <h1 className="font-cinzel text-4xl sm:text-5xl font-bold text-gold-foil mt-2 mb-4">Guest Experiences</h1>
+                  <p className="font-cormorant text-xl italic text-champagne/80">
+                    Transparent, authentic reviews reflecting our view, ambiance, and Mughlai culinary standards.
+                  </p>
+                </div>
+
+                {/* Rating Badges Summary Bar */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-12">
+                  <div className="royal-border bg-deepNavy/80 p-6 rounded flex items-center justify-between">
+                    <CornerFlourish />
+                    <div>
+                      <span className="text-xs font-cinzel text-champagne/70 uppercase">Restaurant Guru Score</span>
+                      <h3 className="font-cinzel text-3xl font-bold text-gold mt-1">3.6 / 5.0</h3>
+                      <p className="text-xs text-ivory/60 mt-1">Based on hundreds of independent food lovers</p>
+                    </div>
+                    <div className="w-14 h-14 rounded-full border border-gold/40 flex items-center justify-center bg-midnight text-gold">
+                      <i data-lucide="award" className="w-7 h-7"></i>
+                    </div>
+                  </div>
+
+                  <div className="royal-border bg-deepNavy/80 p-6 rounded flex items-center justify-between">
+                    <CornerFlourish />
+                    <div>
+                      <span className="text-xs font-cinzel text-champagne/70 uppercase">Tripadvisor Rating</span>
+                      <h3 className="font-cinzel text-3xl font-bold text-gold mt-1">3.5 / 5.0</h3>
+                      <p className="text-xs text-ivory/60 mt-1">Acclaimed for panoramic night views & romantic vibes</p>
+                    </div>
+                    <div className="w-14 h-14 rounded-full border border-gold/40 flex items-center justify-center bg-midnight text-gold">
+                      <i data-lucide="heart-handshake" className="w-7 h-7"></i>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Reviews List */}
+                <div className="space-y-6">
+                  {REVIEWS_DATA.map((rev, idx) => (
+                    <div key={idx} className="royal-border bg-deepNavy/60 p-6 rounded relative">
+                      <CornerFlourish />
+                      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-3">
+                        <div>
+                          <h4 className="font-cinzel text-base font-bold text-champagne">{rev.name}</h4>
+                          <span className="text-xs text-ivory/50">{rev.location} • {rev.date}</span>
+                        </div>
+                        <div className="flex items-center gap-1 text-gold">
+                          {Array.from({ length: rev.rating }).map((_, i) => (
+                            <i key={i} data-lucide="star" className="w-4 h-4 fill-gold"></i>
+                          ))}
+                          <span className="text-xs font-cinzel text-gold/80 ml-2">({rev.source})</span>
+                        </div>
+                      </div>
+                      <p className="font-cormorant text-lg italic text-champagne/90 leading-relaxed">
+                        "{rev.text}"
+                      </p>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Review Submission Notice */}
+                <div className="mt-12 text-center p-6 border border-gold/20 bg-deepNavy/30 rounded">
+                  <p className="text-xs text-champagne/70 font-cinzel">
+                    Dined with us recently? We treasure your genuine feedback on Google, Tripadvisor, and Zomato.
+                  </p>
+                </div>
+              </div>
+            )}
+
+            {/* VIEW: EVENTS & PRIVATE DINING */}
+            {currentPage === 'events' && (
+              <div className="fade-in-up py-12 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
+                <div className="text-center max-w-3xl mx-auto mb-12">
+                  <span className="font-cinzel text-xs tracking-grand text-gold uppercase">Celebrations & Gatherings</span>
+                  <h1 className="font-cinzel text-4xl sm:text-5xl font-bold text-gold-foil mt-2 mb-4">Royal Private Dining</h1>
+                  <p className="font-cormorant text-xl italic text-champagne/80">
+                    Host memorable anniversaries, intimate birthdays, and celebratory banquets under the Old Delhi sky.
+                  </p>
+                </div>
+
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
+                  {/* Event Types */}
+                  <div className="lg:col-span-5 space-y-6">
+                    <div className="royal-border bg-deepNavy/70 p-6 rounded">
+                      <CornerFlourish />
+                      <i data-lucide="heart" className="w-6 h-6 text-gold mb-2"></i>
+                      <h3 className="font-cinzel text-lg font-bold text-ivory">Romantic Anniversaries</h3>
+                      <p className="text-xs text-champagne/70 mt-1 leading-relaxed">
+                        Custom candlelit table styling, fresh rose petals, personalized dessert sparkler, and a dedicated captain.
+                      </p>
+                    </div>
+
+                    <div className="royal-border bg-deepNavy/70 p-6 rounded">
+                      <CornerFlourish />
+                      <i data-lucide="users" className="w-6 h-6 text-gold mb-2"></i>
+                      <h3 className="font-cinzel text-lg font-bold text-ivory">Family & Group Feasts</h3>
+                      <p className="text-xs text-champagne/70 mt-1 leading-relaxed">
+                        Curated set menus featuring tandoori grills, dum biryanis, signature bread baskets, and mocktails.
+                      </p>
+                    </div>
+
+                    <div className="royal-border bg-deepNavy/70 p-6 rounded">
+                      <CornerFlourish />
+                      <i data-lucide="camera" className="w-6 h-6 text-gold mb-2"></i>
+                      <h3 className="font-cinzel text-lg font-bold text-ivory">Photography & Shoots</h3>
+                      <p className="text-xs text-champagne/70 mt-1 leading-relaxed">
+                        Pre-wedding and editorial terrace bookings during exclusive early morning or dusk slots.
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Enquiry Form */}
+                  <div className="lg:col-span-7">
+                    <div className="royal-border bg-deepNavy/90 p-8 rounded-lg">
+                      <CornerFlourish />
+                      <h3 className="font-cinzel text-xl font-bold text-gold mb-2">Event Concierge Enquiry</h3>
+                      <p className="text-xs text-champagne/75 mb-6">Our banquet manager will contact you within 6 hours.</p>
+
+                      <form onSubmit={(e) => { e.preventDefault(); alert("Thank you! Your private dining enquiry has been submitted. Our concierge will contact you shortly."); }} className="space-y-4">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                          <div>
+                            <label className="block text-[11px] font-cinzel uppercase text-champagne/80 mb-1">Your Name</label>
+                            <input required type="text" placeholder="e.g. Vikram Singh" className="w-full bg-midnight border border-gold/40 text-ivory px-3.5 py-2.5 rounded text-sm focus:border-gold outline-none" />
+                          </div>
+                          <div>
+                            <label className="block text-[11px] font-cinzel uppercase text-champagne/80 mb-1">Phone / WhatsApp</label>
+                            <input required type="tel" placeholder="+91 98765 43210" className="w-full bg-midnight border border-gold/40 text-ivory px-3.5 py-2.5 rounded text-sm focus:border-gold outline-none" />
+                          </div>
+                        </div>
+
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                          <div>
+                            <label className="block text-[11px] font-cinzel uppercase text-champagne/80 mb-1">Occasion</label>
+                            <select className="w-full bg-midnight border border-gold/40 text-ivory px-3.5 py-2.5 rounded text-sm focus:border-gold outline-none">
+                              <option>Anniversary / Date Night</option>
+                              <option>Birthday Celebration</option>
+                              <option>Corporate Dinner</option>
+                              <option>Family Gathering</option>
+                              <option>Terrace Photoshoot</option>
+                            </select>
+                          </div>
+                          <div>
+                            <label className="block text-[11px] font-cinzel uppercase text-champagne/80 mb-1">Estimated Guests</label>
+                            <input type="number" min="2" max="60" defaultValue="4" className="w-full bg-midnight border border-gold/40 text-ivory px-3.5 py-2.5 rounded text-sm focus:border-gold outline-none" />
+                          </div>
+                        </div>
+
+                        <div>
+                          <label className="block text-[11px] font-cinzel uppercase text-champagne/80 mb-1">Special Preferences / Decor Needs</label>
+                          <textarea rows="3" placeholder="Cake arrangement, flower petals, secluded corner seating..." className="w-full bg-midnight border border-gold/40 text-ivory px-3.5 py-2 rounded text-sm focus:border-gold outline-none"></textarea>
+                        </div>
+
+                        <button
+                          type="submit"
+                          className="w-full bg-gradient-to-r from-gold via-champagne to-gold text-midnight font-cinzel font-bold text-xs uppercase tracking-regal py-3.5 rounded hover:brightness-110 transition"
+                        >
+                          Submit Private Event Request
+                        </button>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {/* VIEW: RESERVE (BOOKING + PLAIN TEXT LOCATION SIDE PANEL) */}
+            {currentPage === 'reserve' && (
+              <div className="fade-in-up py-12 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto">
+                <div className="text-center max-w-3xl mx-auto mb-10">
+                  <span className="font-cinzel text-xs tracking-grand text-gold uppercase">Table Reservations</span>
+                  <h1 className="font-cinzel text-4xl sm:text-5xl font-bold text-gold-foil mt-2 mb-4">
+                    Reserve Your Royal Table
+                  </h1>
+                  <p className="font-cormorant text-xl italic text-champagne/85">
+                    Secure your preferred sunset or dinner seating overlooking the historic domes of Jama Masjid.
+                  </p>
+                </div>
+
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                  
+                  {/* RESERVATION FORM */}
+                  <div className="lg:col-span-7">
+                    <div className="royal-border bg-deepNavy/90 p-8 rounded-lg shadow-2xl relative">
+                      <CornerFlourish />
+
+                      {bookingSuccess ? (
+                        <div className="text-center py-10 fade-in-up">
+                          <div className="w-16 h-16 rounded-full border-2 border-gold mx-auto mb-4 flex items-center justify-center text-gold bg-midnight">
+                            <i data-lucide="check" className="w-8 h-8"></i>
+                          </div>
+                          <h3 className="font-cinzel text-2xl font-bold text-gold-foil mb-2">
+                            Reservation Requested!
+                          </h3>
+                          <p className="font-cormorant text-lg text-champagne/90 mb-4">
+                            Honored {formData.name}, your reservation request for {formData.guests} guest(s) on {formData.date} at {formData.time} has been recorded.
+                          </p>
+                          <div className="p-4 bg-midnight/80 border border-gold/30 rounded text-xs text-champagne/75 mb-6 text-left space-y-1">
+                            <p><strong>Seating Area:</strong> {formData.tableType}</p>
+                            <p><strong>Contact Phone:</strong> {formData.phone}</p>
+                            <p className="text-gold/90 mt-2">✨ You will receive a WhatsApp confirmation message within 15 minutes.</p>
+                          </div>
+                          <button
+                            onClick={() => {
+                              setBookingSuccess(false);
+                              navigateTo('home');
+                            }}
+                            className="bg-gold text-midnight font-cinzel font-bold text-xs uppercase tracking-widest px-6 py-3 rounded"
+                          >
+                            Return to Palace Home
+                          </button>
+                        </div>
+                      ) : (
+                        <form onSubmit={handleReservationSubmit} className="space-y-4">
+                          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                              <label className="block text-[11px] font-cinzel uppercase text-champagne/80 mb-1.5">
+                                Full Name *
+                              </label>
+                              <input
+                                type="text"
+                                required
+                                value={formData.name}
+                                onChange={(e) => setFormData({...formData, name: e.target.value})}
+                                placeholder="e.g. Aarav Sharma"
+                                className="w-full bg-midnight border border-gold/40 text-ivory px-3.5 py-2.5 rounded text-sm focus:border-gold outline-none"
+                              />
+                            </div>
+                            <div>
+                              <label className="block text-[11px] font-cinzel uppercase text-champagne/80 mb-1.5">
+                                Phone Number (WhatsApp) *
+                              </label>
+                              <input
+                                type="tel"
+                                required
+                                value={formData.phone}
+                                onChange={(e) => setFormData({...formData, phone: e.target.value})}
+                                placeholder="+91 98110 00000"
+                                className="w-full bg-midnight border border-gold/40 text-ivory px-3.5 py-2.5 rounded text-sm focus:border-gold outline-none"
+                              />
+                            </div>
+                          </div>
+
+                          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                            <div>
+                              <label className="block text-[11px] font-cinzel uppercase text-champagne/80 mb-1.5">
+                                Guests
+                              </label>
+                              <select
+                                value={formData.guests}
+                                onChange={(e) => setFormData({...formData, guests: e.target.value})}
+                                className="w-full bg-midnight border border-gold/40 text-ivory px-3 py-2.5 rounded text-sm focus:border-gold outline-none"
+                              >
+                                {[1,2,3,4,5,6,7,8,10,12].map(n => (
+                                  <option key={n} value={n}>{n} {n === 1 ? 'Guest' : 'Guests'}</option>
+                                ))}
+                              </select>
+                            </div>
+
+                            <div>
+                              <label className="block text-[11px] font-cinzel uppercase text-champagne/80 mb-1.5">
+                                Date
+                              </label>
+                              <input
+                                type="date"
+                                required
+                                value={formData.date}
+                                onChange={(e) => setFormData({...formData, date: e.target.value})}
+                                className="w-full bg-midnight border border-gold/40 text-ivory px-3 py-2 rounded text-sm focus:border-gold outline-none"
+                              />
+                            </div>
+
+                            <div>
+                              <label className="block text-[11px] font-cinzel uppercase text-champagne/80 mb-1.5">
+                                Time Slot
+                              </label>
+                              <select
+                                value={formData.time}
+                                onChange={(e) => setFormData({...formData, time: e.target.value})}
+                                className="w-full bg-midnight border border-gold/40 text-ivory px-3 py-2.5 rounded text-sm focus:border-gold outline-none"
+                              >
+                                <option value="13:00">1:00 PM (Lunch)</option>
+                                <option value="14:30">2:30 PM (Afternoon)</option>
+                                <option value="17:30">5:30 PM (Sunset / Golden)</option>
+                                <option value="19:00">7:00 PM (Twilight)</option>
+                                <option value="20:30">8:30 PM (Prime Dinner)</option>
+                                <option value="22:00">10:00 PM (Late Starlit)</option>
+                              </select>
+                            </div>
+                          </div>
+
+                          <div>
+                            <label className="block text-[11px] font-cinzel uppercase text-champagne/80 mb-1.5">
+                              Preferred Seating Vibe
+                            </label>
+                            <select
+                              value={formData.tableType}
+                              onChange={(e) => setFormData({...formData, tableType: e.target.value})}
+                              className="w-full bg-midnight border border-gold/40 text-ivory px-3.5 py-2.5 rounded text-sm focus:border-gold outline-none"
+                            >
+                              <option>Masjid View Balcony Front-Row</option>
+                              <option>Cozy Diwan Velvet Lounge</option>
+                              <option>Center Terrace Candlelit Table</option>
+                            </select>
+                          </div>
+
+                          <div>
+                            <label className="block text-[11px] font-cinzel uppercase text-champagne/80 mb-1.5">
+                              Special Request (Optional)
+                            </label>
+                            <textarea
+                              rows="2"
+                              value={formData.specialRequest}
+                              onChange={(e) => setFormData({...formData, specialRequest: e.target.value})}
+                              placeholder="e.g. Birthday anniversary cake, quiet corner table, photography tripod space..."
+                              className="w-full bg-midnight border border-gold/40 text-ivory px-3.5 py-2 rounded text-sm focus:border-gold outline-none"
+                            ></textarea>
+                          </div>
+
+                          <div className="pt-2">
+                            <button
+                              type="submit"
+                              className="w-full bg-gradient-to-r from-gold via-champagne to-gold text-midnight font-cinzel font-bold text-xs uppercase tracking-regal py-4 rounded shadow-2xl hover:brightness-110 transition duration-300"
+                            >
+                              Confirm Table Reservation Request
+                            </button>
+                            <p className="text-[10px] text-center text-champagne/60 mt-2 font-cinzel">
+                              No advance booking fee required • Tables held for 15 minutes past scheduled time
+                            </p>
+                          </div>
+                        </form>
+                      )}
+                    </div>
+                  </div>
+
+                  {/* SIDE PANEL: CAFE CONTACT DETAILS & TEXT-BASED LOCATION (STRICT: NO MAPS) */}
+                  <div className="lg:col-span-5 space-y-6">
+                    
+                    {/* Location & Directions Panel */}
+                    <div className="royal-border bg-deepNavy/80 p-6 rounded-lg">
+                      <CornerFlourish />
+                      <div className="flex items-center gap-2 text-gold font-cinzel text-xs uppercase tracking-widest mb-3">
+                        <i data-lucide="map-pin" className="w-4 h-4 text-gold"></i>
+                        <span>Sanctuary Location</span>
+                      </div>
+                      
+                      <h3 className="font-cinzel text-lg font-bold text-ivory mb-2">
+                        Rooftop Opposite Jama Masjid
+                      </h3>
+                      
+                      <div className="text-xs text-champagne/90 space-y-2 mb-6 border-b border-gold/20 pb-4">
+                        <p className="font-semibold text-gold">Exact Address:</p>
+                        <p className="leading-relaxed bg-midnight/60 p-2.5 rounded border border-gold/20">
+                          Rooftop, Building Opposite Gate No. 3, Jama Masjid, Daryaganj, New Delhi, Delhi 110006, India
+                        </p>
+                      </div>
+
+                      {/* Plain Text Landmark Directions (As per rules: No embedded maps or map links) */}
+                      <div className="space-y-3">
+                        <h4 className="font-cinzel text-xs text-gold uppercase tracking-wider flex items-center gap-1.5">
+                          <i data-lucide="compass" className="w-3.5 h-3.5"></i>
+                          <span>How to Find Us (Landmark Directions)</span>
+                        </h4>
+                        <p className="text-xs text-ivory/75 leading-relaxed">
+                          • <strong>By Metro:</strong> Take the Violet Line to <em>Jama Masjid Metro Station (Gate 2)</em>. Walk 2 minutes toward Gate 3 of the mosque.
+                        </p>
+                        <p className="text-xs text-ivory/75 leading-relaxed">
+                          • <strong>By Car / Cab:</strong> Direct drop-off at <em>Subhash Marg / Daryaganj Roundabout</em>. Walk down the paved lane facing Gate 3.
+                        </p>
+                        <p className="text-xs text-ivory/75 leading-relaxed">
+                          • <strong>Rooftop Access:</strong> Look for the brass Gumbad Cafe archway sign, and take the express elevator or heritage stairs to the rooftop level.
+                        </p>
+                      </div>
+
+                      {/* Mughal Skyline Illustration replacing map */}
+                      <div className="mt-6 pt-4 border-t border-gold/20">
+                        <SkylineSilhouette className="text-gold/40" />
+                        <span className="text-[10px] text-center block text-champagne/50 font-cinzel mt-1">
+                          Shahjahanabad Skyline Perspective
+                        </span>
+                      </div>
+                    </div>
+
+                    {/* Operational Timings & Direct Phone */}
+                    <div className="royal-border bg-deepNavy/80 p-6 rounded-lg space-y-4">
+                      <CornerFlourish />
+                      <div className="flex items-center gap-2 text-gold font-cinzel text-xs uppercase tracking-widest">
+                        <i data-lucide="clock" className="w-4 h-4"></i>
+                        <span>Operating Hours</span>
+                      </div>
+                      <div className="text-xs text-champagne/80 space-y-1">
+                        <div className="flex justify-between py-1 border-b border-gold/10">
+                          <span>Monday – Sunday</span>
+                          <span className="text-gold font-semibold">1:00 PM – 1:00 AM</span>
+                        </div>
+                        <div className="flex justify-between py-1 border-b border-gold/10">
+                          <span>Golden Hour Window</span>
+                          <span className="text-champagne font-semibold">5:00 PM – 6:30 PM</span>
+                        </div>
+                        <div className="flex justify-between py-1">
+                          <span>Late Night Dining</span>
+                          <span className="text-champagne font-semibold">Till 1:00 AM Daily</span>
+                        </div>
+                      </div>
+
+                      <div className="pt-2 border-t border-gold/20">
+                        <div className="text-xs text-champagne/70 mb-1">Direct Cafe Phone / Table Desk:</div>
+                        <div className="font-cinzel text-sm text-gold font-bold">+91 98112 34567 / +91 11 2328 0000</div>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {/* VIEW: 404 CUSTOM NOT FOUND */}
+            {currentPage === '404' && (
+              <div className="fade-in-up py-20 px-4 text-center max-w-xl mx-auto">
+                <div className="royal-border bg-deepNavy/80 p-10 rounded-lg">
+                  <CornerFlourish />
+                  <div className="w-20 h-20 mx-auto text-gold mb-4 flex items-center justify-center">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="w-full h-full">
+                      <path d="M12 2C7 2 3 6 3 12V21H21V12C21 6 17 2 12 2Z" />
+                      <path d="M9 12L15 18M15 12L9 18" stroke="#FFE494" strokeWidth="2" />
+                    </svg>
+                  </div>
+                  <span className="font-cinzel text-xs text-gold uppercase tracking-grand block mb-2">Error 404</span>
+                  <h1 className="font-cinzel text-3xl font-bold text-gold-foil mb-3">Lost Under The Dome</h1>
+                  <p className="font-cormorant text-lg italic text-champagne/80 mb-6">
+                    The palace chamber or corridor you seek has drifted away into the Old Delhi mist.
+                  </p>
+                  <button
+                    onClick={() => navigateTo('home')}
+                    className="bg-gold text-midnight font-cinzel font-bold text-xs uppercase tracking-widest px-6 py-3 rounded"
+                  >
+                    Return to Palace Courtyard
+                  </button>
+                </div>
+              </div>
+            )}
+
+          </main>
+
+          {/* FLOATING WHATSAPP BUTTON (SITE-WIDE) */}
+          <a
+            href="https://wa.me/919811234567?text=Hello%20Gumbad%20Cafe,%20I%20would%20like%20to%20enquire%20about%20a%20rooftop%20table%20reservation."
+            target="_blank"
+            rel="noopener noreferrer"
+            className="fixed bottom-6 right-6 z-40 bg-[#25D366] text-white p-3.5 rounded-full shadow-2xl hover:scale-110 transition duration-300 flex items-center justify-center border-2 border-champagne"
+            title="Chat with Gumbad Concierge on WhatsApp"
+            aria-label="WhatsApp Concierge"
+          >
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 6.46 17.5 2 12.04 2ZM12.05 20.15C10.57 20.15 9.12 19.76 7.85 19.01L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 14.99 3.8 13.47 3.8 11.91C3.8 7.37 7.5 3.67 12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.15 12.05 20.15ZM16.57 14.29C16.32 14.17 15.11 13.57 14.88 13.49C14.66 13.41 14.49 13.37 14.33 13.61C14.16 13.86 13.68 14.42 13.54 14.59C13.39 14.75 13.25 14.77 13 14.65C12.75 14.52 11.96 14.26 11.02 13.43C10.29 12.78 9.79 11.97 9.65 11.72C9.5 11.48 9.63 11.34 9.76 11.22C9.87 11.11 10.01 10.93 10.13 10.79C10.26 10.64 10.3 10.54 10.38 10.37C10.46 10.21 10.42 10.06 10.36 9.94C10.3 9.82 9.8 8.6 9.59 8.1C9.39 7.6 9.18 7.67 9.03 7.66C8.88 7.65 8.71 7.65 8.55 7.65C8.38 7.65 8.11 7.71 7.89 7.96C7.66 8.2 7.03 8.79 7.03 10C7.03 11.21 7.91 12.37 8.03 12.54C8.16 12.7 9.76 15.17 12.21 16.23C12.79 16.48 13.25 16.63 13.6 16.74C14.2 16.93 14.74 16.9 15.17 16.84C15.65 16.77 16.66 16.23 16.87 15.64C17.08 15.05 17.08 14.55 17.01 14.44C16.95 14.33 16.82 14.29 16.57 14.29Z" />
+            </svg>
+          </a>
+
+          {/* LUXURY ROYAL FOOTER (ON EVERY PAGE) */}
+          <footer className="bg-[#03040a] border-t border-gold/30 text-ivory relative z-20 pt-16 pb-10">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-gold/20">
+                
+                {/* Brand & Monogram Column */}
+                <div className="space-y-4">
+                  <div className="flex items-center gap-3">
+                    <div className="w-10 h-10 rounded border border-gold/60 bg-deepNavy flex items-center justify-center text-gold">
+                      <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+                        <path d="M12 2V4M12 4C7.5 4 4 7 4 12V20H20V12C20 7 16.5 4 12 4Z" stroke="currentColor" strokeWidth="1.5" />
+                        <circle cx="12" cy="12" r="2.5" fill="#FFE494" />
+                      </svg>
+                    </div>
+                    <div>
+                      <span className="font-cinzel text-lg font-bold tracking-grand text-gold-foil block">GUMBAD CAFE</span>
+                      <span className="text-[9px] uppercase tracking-regal text-champagne/60 font-cinzel">Rooftop Old Delhi</span>
+                    </div>
+                  </div>
+                  <p className="font-cormorant text-base italic text-champagne/75 leading-relaxed">
+                    "Where the historic minarets of Jama Masjid frame your evening, and the legacy of Mughal hospitality lives on."
+                  </p>
+                  <div className="pt-1 flex gap-3 text-gold/80">
+                    <span className="hover:text-gold cursor-pointer transition"><i data-lucide="instagram" className="w-4 h-4"></i></span>
+                    <span className="hover:text-gold cursor-pointer transition"><i data-lucide="facebook" className="w-4 h-4"></i></span>
+                    <span className="hover:text-gold cursor-pointer transition"><i data-lucide="mail" className="w-4 h-4"></i></span>
+                  </div>
+                </div>
+
+                {/* Quick Navigation */}
+                <div>
+                  <h4 className="font-cinzel text-xs font-bold uppercase tracking-widest text-gold mb-4">
+                    Palace Navigation
+                  </h4>
+                  <ul className="space-y-2 text-xs font-cinzel text-champagne/80">
+                    {['home', 'menu', 'story', 'experience', 'gallery', 'reviews', 'events', 'reserve'].map(item => (
+                      <li key={item}>
+                        <button
+                          onClick={() => navigateTo(item)}
+                          className="hover:text-gold transition uppercase tracking-wider"
+                        >
+                          &rsaquo; {item === 'story' ? 'Our Story' : item}
+                        </button>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                {/* Plain Text Location & Contact (Strict: No Google Maps Embeds) */}
+                <div>
+                  <h4 className="font-cinzel text-xs font-bold uppercase tracking-widest text-gold mb-4">
+                    Sanctuary Address
+                  </h4>
+                  <p className="text-xs text-champagne/80 leading-relaxed mb-3">
+                    Rooftop, Opposite Gate No. 3, Jama Masjid, Daryaganj, New Delhi, Delhi 110006
+                  </p>
+                  <p className="text-xs text-ivory/60 leading-relaxed mb-4">
+                    Landmark: Above the heritage red-sandstone avenue facing the central mosque dome.
+                  </p>
+                  <div className="text-xs text-gold space-y-1">
+                    <p><strong>Table Desk:</strong> +91 98112 34567</p>
+                    <p><strong>Concierge:</strong> info@gumbadcafe.com</p>
+                  </div>
+                </div>
+
+                {/* Hours & Imperial Newsletter */}
+                <div>
+                  <h4 className="font-cinzel text-xs font-bold uppercase tracking-widest text-gold mb-4">
+                    Hours & Updates
+                  </h4>
+                  <p className="text-xs text-champagne/80 mb-3">
+                    Open All 7 Days: <span className="text-gold font-semibold">1:00 PM – 1:00 AM</span>
+                  </p>
+                  <p className="text-xs text-ivory/60 mb-3">
+                    Subscribe for exclusive Sufi evening notices and seasonal menu debuts.
+                  </p>
+                  <form onSubmit={(e) => { e.preventDefault(); alert("Thank you for joining the Gumbad Royal Gazette."); }} className="flex">
+                    <input
+                      type="email"
+                      required
+                      placeholder="Your email address"
+                      className="bg-midnight border border-gold/40 text-xs px-3 py-2 rounded-l text-ivory outline-none w-full focus:border-gold"
+                    />
+                    <button
+                      type="submit"
+                      className="bg-gold text-midnight px-3 py-2 rounded-r font-cinzel text-xs font-bold hover:bg-champagne transition"
+                    >
+                      JOIN
+                    </button>
+                  </form>
+                </div>
+
+              </div>
+
+              {/* Bottom Copyright & 404 Trigger */}
+              <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-[11px] font-cinzel text-champagne/60 gap-4">
+                <div>
+                  © {new Date().getFullYear()} Gumbad Cafe, Old Delhi. All Royal Rights Reserved.
+                </div>
+                <div className="flex items-center gap-4">
+                  <span className="hover:text-gold cursor-pointer" onClick={() => navigateTo('story')}>Heritage & Philosophy</span>
+                  <span>•</span>
+                  <span className="hover:text-gold cursor-pointer" onClick={() => navigateTo('reserve')}>Table Desk</span>
+                  <span>•</span>
+                  <span className="hover:text-gold cursor-pointer text-gold/40" onClick={() => navigateTo('404')}>Lost Chamber (404)</span>
+                </div>
+              </div>
+
+            </div>
+          </footer>
+
+        </div>
+      );
+    }
+
+    // Render React App
+    const root = ReactDOM.createRoot(document.getElementById('root'));
+    root.render(<GumbadCafeApp />);
+  </script>
+</body>
+</html>
